@@ -9,21 +9,30 @@ struct scoresdata
 
 int main(void)
 {
+    /*build dataset*/
+    scoresdata dataset[5]=
+    {
+        {"zhangsan",100},
+        {"lisi",98},
+        {"wangwu",78},
+        {"zhaoliu",96},
+        {"xueqi",88}
+    };
+
+     
     /*open file*/
     FILE *scores=nullptr;
-    scores=fopen("scores.txt","r");
+    scores=fopen("scores.txt","w+");
     if(scores==nullptr)
     {
         cout << "error!";
         return 1;
     }
-
-    /*build dataset*/
-    scoresdata dataset[5]={};
     for(int i=0;i<5;i++)
     {
-        fscanf(scores,"%s %d",dataset[i].name,&dataset[i].score);
+        fprintf(scores,"%s %d\n",dataset[i].name,dataset[i].score);
     }
+    fclose(scores);
 
     /*average*/
     double sum=0,average=0;

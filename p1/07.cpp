@@ -1,29 +1,26 @@
 #include<iostream>
 using namespace std;
 
-void cut(string *str,int m,int n)  /*m:position,n:num of char*/
+void cut(string *str,unsigned int m,unsigned int n)  /*m:position,n:num of char*/
 {  
     string last="";
 
-    if(((*str).length())-m>=n)
+    if(((*str).length())-m+1>n)
     {
         last.resize(n);
 
-        for(int i=m;i<=n;i++)
+        for(unsigned int i=m,j=0;j<=n;i++,j++)
         {
-            
+            last[j]=(*str)[i];
         }
 
         cout << last << endl;
     }
-    else if(((*str).length())-m<n)
+    else if(((*str).length())-m+1<=n)
     {
-        last.resize(((*str).length())-m);
+        last.resize(((*str).length())-m+1);
 
-        for(int i=m;((*str)[i])!='\0';i++)
-        {
-            last=(*str).substr(m);
-        }
+        last=(*str).substr(m);
 
         cout << last << endl;
     }
@@ -35,7 +32,7 @@ int main(void)
     string str="we have the power to be stronger";
     
     cut(&str,5,4);
-    cut(&str,5,20);
+    cut(&str,5,30);
 
     return 0;
 }

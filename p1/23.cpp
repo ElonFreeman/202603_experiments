@@ -1,13 +1,26 @@
 #include<iostream>
 using namespace std;
 
-void insert(string *origin,string *last)
+/*void insert(string *origin,string *last,int length)
 {
-    for(int i=0,j=0;i<(*origin).length();i++,j++)
+    for(int i=0,j=0;i<length;i++,j++)
     {
-        last[j]=origin[i];
-        last[j+1]=' ';
+        *(last+i)=*(origin+i);
+        //last[++j]=' ';
     }
+}*/
+
+string insert(string origin)
+{
+    string last;
+
+    for(int i=0;origin[i]!='\0';i++)
+    {
+        last+=origin[i];
+        last+=' ';
+    }
+
+    return last;
 }
 
 int main(void)
@@ -15,7 +28,7 @@ int main(void)
     string name_origin,name_last;
     cin >> name_origin;
 
-    insert(&name_origin,&name_last);
+    name_last=insert(name_origin);
 
     cout << name_last;
     

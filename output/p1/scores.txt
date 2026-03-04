@@ -1,5 +1,5 @@
-zhangsan 978
-lisi 110
-wangwu 456
-zhaoliu 463
-xueqi 136
+zhangsan 100
+lisi 98
+wangwu 78
+zhaoliu 96
+xueqi 88
