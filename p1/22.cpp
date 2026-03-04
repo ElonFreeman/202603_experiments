@@ -5,7 +5,7 @@ using namespace std;
 int sum_of_fators(int num)
 {
     int sum=0;
-    for(int i=0;i<=sqrt(num);i++)
+    for(int i=1;i<=sqrt(num);i++)
     {
         if(num%i!=0)
         {
