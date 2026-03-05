@@ -27,13 +27,12 @@ int main(void)
 
     unsigned long long tmp[2][1]={{1},{2}};
     for(unsigned long long i=1;i<20;i++)
-    {
-        tmp[1][0]=tmp[1][0]*fraction[1][i];//Denominator
+    {   
         tmp[0][0]=tmp[0][0]*fraction[1][i]+tmp[1][0]*fraction[0][i];//Molecule
-      //tmp[0][0] = tmp[0][0]*fraction[1][i] + fraction[0][i]*tmp[1][0]/fraction[1][i-1]
+        tmp[1][0]=tmp[1][0]*fraction[1][i];//Denominator
     }
 
-    cout << tmp[0][0] << '/' << tmp[1][0];
+    cout << "sum of first 20 member: " << tmp[0][0] << '/' << tmp[1][0];
     
     return 0;
 }
